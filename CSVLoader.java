@@ -96,16 +96,17 @@ public class CSVLoader {
 			connection = DriverManager.getConnection(JDBC_CONNECTION_URL);
 			
 			if(tableExists != true) {
-				connection.createStatement().execute("create table x(A, B, C, D, E, F, G, H, I, J)");
+				connection.createStatement().execute("CREATE TABLE x (A, B, C, D, E, F, G, H, I, J)");
 			}
 			
 			if(truncateTable == true) {
-				connection.createStatement().execute("delete from x");
+				connection.createStatement().execute("DELETE FROM x");
 			}
 				
 			
 			PreparedStatement stmt =
-					connection.prepareStatement("insert into x (A, B, C, D, E, F, G, H, I, J) values (?, ?, ?, ?, ?, ?, ?, ?)");
+					connection.prepareStatement("INSERT INTO x (A, B, C, D, E, F, G, H, I, J)
+								    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			
 			for(CSVtosqlite c : CsvList)
             {
