@@ -77,3 +77,8 @@ H  TEXT NOT NULL,
 I  TEXT NOT NULL,
 J  TEXT NOT NULL
 );
+
+To insert values into table x:
+-------------------------------
+INSERT INTO x (A, B, C, D, E, F, G, H, I, J)
+								    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
